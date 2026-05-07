@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__notion__notion-search",
+      "mcp__notion__notion-fetch",
+      "Bash(bundle exec *)",
+      "Skill(update-config)",
+      "Skill(update-config:*)"
+    ]
+  }
+}
