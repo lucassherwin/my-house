@@ -41,3 +41,5 @@ yarn-debug.log*
 **/generated/**
 ssr-generated
 .env
+
+/config/master.key
