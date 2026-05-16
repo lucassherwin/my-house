@@ -9,7 +9,6 @@ class ApplicationController < ActionController::Base
   private
 
   def current_person
-    # test asdfasdfasdfasdfasdf
     return @current_person if defined?(@current_person)
 
     @current_person = session[:person_id] && Person.find_by(id: session[:person_id])
