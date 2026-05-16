@@ -1,4 +1,4 @@
-.PHONY: up down build setup install console migrate logs bash test create-migration npm
+.PHONY: up down build setup install console migrate logs bash test create-migration npm restart
 
 COMPOSE = docker compose
 
@@ -7,6 +7,10 @@ up:
 
 down:
 	$(COMPOSE) down
+
+# Restart all containers
+restart:
+	$(COMPOSE) down && $(COMPOSE) up -d
 
 build:
 	$(COMPOSE) build
@@ -27,10 +31,10 @@ console:
 migrate:
 	$(COMPOSE) exec web bundle exec rails db:migrate
 
-# Create migration: make create-migration NAME=AddEmailIndexToPeople
+# Create migration: make create-migration NAME=MigrationName
 create-migration:
 ifndef NAME
-	$(error NAME is required. Usage: make create-migration NAME=AddEmailIndexToPeople)
+	$(error NAME is required. Usage: make create-migration NAME=MigrationName)
 endif
 	$(COMPOSE) exec web bundle exec rails generate migration $(NAME)
 
