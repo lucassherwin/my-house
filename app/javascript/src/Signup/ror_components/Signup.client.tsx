@@ -42,7 +42,7 @@ const Signup: React.FC = () => {
     <AuthLayout>
       <FormCard title="Create account" description="Sign up to get started with My House.">
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             <FormInput
               label="First name"
               id="first_name"
