@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class HomeController < ApplicationController
-  protect_from_forgery with: :exception
+  before_action :require_authentication
 
-  def index; end
+  def index
+    @props = { name: current_person.first_name }
+  end
 end

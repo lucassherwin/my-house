@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_05_07_214529) do
+ActiveRecord::Schema[8.1].define(version: 2026_05_15_191401) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "pgcrypto"
@@ -45,11 +45,12 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_07_214529) do
     t.datetime "created_at", null: false
     t.string "email"
     t.string "first_name"
-    t.uuid "household_id", null: false
+    t.uuid "household_id"
     t.string "last_name"
     t.string "password_digest"
     t.string "phone"
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_people_on_email", unique: true
     t.index ["household_id"], name: "index_people_on_household_id"
   end
 

@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": { "@/*": ["app/javascript/src/*"] },
+    "ignoreDeprecations": "6.0",
     "target": "es2018",
     "allowJs": true,
     "skipLibCheck": true,

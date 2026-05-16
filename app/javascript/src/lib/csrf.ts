@@ -1,0 +1,11 @@
+export function getCsrfToken(): string {
+  const token = document
+    .querySelector('meta[name="csrf-token"]')
+    ?.getAttribute("content");
+
+  if (!token) {
+    throw new Error("CSRF token not found in meta tags");
+  }
+
+  return token;
+}

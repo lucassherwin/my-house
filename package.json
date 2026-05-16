@@ -3,14 +3,25 @@
   "name": "app",
   "private": true,
   "version": "0.1.0",
+  "scripts": {
+    "test:e2e": "playwright test"
+  },
   "browserslist": [
     "defaults"
   ],
   "dependencies": {
+    "@radix-ui/react-label": "^2.1.8",
+    "@radix-ui/react-slot": "^1.2.4",
+    "autoprefixer": "^10.5.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "compression-webpack-plugin": "^12.0.0",
     "css-loader": "7.1.4",
     "css-minimizer-webpack-plugin": "8.0.0",
+    "lucide-react": "^1.16.0",
     "mini-css-extract-plugin": "2.10.2",
+    "postcss": "^8.5.14",
+    "postcss-loader": "^8.2.1",
     "prop-types": "15.8.1",
     "react": "19.2.6",
     "react-dom": "19.2.6",
@@ -18,6 +29,7 @@
     "sass-loader": "^16.0.7",
     "shakapacker": "10.0.0",
     "style-loader": "4.0.0",
+    "tailwindcss": "^3.4.19",
     "terser-webpack-plugin": "^5.5.0",
     "webpack": "^5.106.2",
     "webpack-assets-manifest": "^6.5.1",
@@ -26,11 +38,13 @@
     "webpack-subresource-integrity": "^5.1.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.60.0",
     "@pmmmwh/react-refresh-webpack-plugin": "0.6.2",
     "@swc/core": "1.15.33",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
     "react-refresh": "0.18.0",
+    "shadcn": "^4.7.0",
     "swc-loader": "0.2.7",
     "typescript": "6.0.3",
     "webpack-dev-server": "^5.2.3"

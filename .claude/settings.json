@@ -1,11 +1,30 @@
 {
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .claude/hooks/rails_test_reminder.py 2>/dev/null || true"
+          }
+        ]
+      }
+    ]
+  },
   "permissions": {
     "allow": [
       "mcp__notion__notion-search",
       "mcp__notion__notion-fetch",
       "Bash(bundle exec *)",
       "Skill(update-config)",
-      "Skill(update-config:*)"
+      "Skill(update-config:*)",
+      "Bash(xargs cat)",
+      "Bash(bin/rails generate *)",
+      "Bash(RAILS_MASTER_KEY=$\\(cat config/master.key\\) bin/rails generate migration MakeHouseholdOptionalOnPeople)",
+      "Bash(docker compose *)",
+      "Bash(make migrate *)",
+      "Bash(make test *)"
     ]
   }
 }

@@ -43,3 +43,11 @@ ssr-generated
 .env
 
 /config/master.key
+
+# claude and agent files
+/.agents
+/.claude
+/.mcp.json
+/.skills-lock.json
+
+/test-results

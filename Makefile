@@ -1,4 +1,4 @@
-.PHONY: up down build setup install console migrate logs bash test
+.PHONY: up down build setup install console migrate logs bash test create-migration npm
 
 COMPOSE = docker compose
 
@@ -23,8 +23,16 @@ install:
 console:
 	$(COMPOSE) exec web bundle exec rails console
 
+# Run migrations
 migrate:
 	$(COMPOSE) exec web bundle exec rails db:migrate
+
+# Create migration: make create-migration NAME=AddEmailIndexToPeople
+create-migration:
+ifndef NAME
+	$(error NAME is required. Usage: make create-migration NAME=AddEmailIndexToPeople)
+endif
+	$(COMPOSE) exec web bundle exec rails generate migration $(NAME)
 
 # Pass SERVICE=web to tail a single service: make logs SERVICE=web
 logs:
@@ -35,3 +43,7 @@ bash:
 
 test:
 	$(COMPOSE) run --rm -e RAILS_ENV=test web bundle exec rails test
+
+## Run npm install inside the web container (requires running container)
+npm:
+	$(COMPOSE) exec web npm install
