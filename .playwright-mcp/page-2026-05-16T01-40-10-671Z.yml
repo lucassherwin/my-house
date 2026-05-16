@@ -1,0 +1,12 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e3]:
+    - navigation [ref=e4]:
+      - button "My House home" [ref=e5]:
+        - img [ref=e7]
+        - text: My House
+      - generic [ref=e10]:
+        - button "My House" [ref=e11]
+        - button "My Lists" [ref=e12]
+      - button "Logout" [ref=e14]
+  - main [ref=e16]:
+    - heading "Hello Alice - welcome home" [level=1] [ref=e17]

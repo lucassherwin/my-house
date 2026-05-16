@@ -1,0 +1,24 @@
+- generic [ref=e3]:
+  - button "Switch to dark mode" [ref=e5] [cursor=pointer]:
+    - img
+  - generic [ref=e6]:
+    - img [ref=e8]
+    - generic [ref=e11]: My House
+  - generic [ref=e13]:
+    - generic [ref=e14]:
+      - generic [ref=e15]: Welcome back
+      - generic [ref=e16]: Sign in to your account to continue.
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - text: Email
+        - textbox "Email" [ref=e20]: test+1778799624977@example.com
+      - generic [ref=e21]:
+        - text: Password
+        - textbox "Password" [ref=e22]: password
+      - list [ref=e26]:
+        - listitem [ref=e27]: Invalid email or password
+      - button "Sign in" [ref=e23] [cursor=pointer]
+      - paragraph [ref=e24]:
+        - text: Don't have an account?
+        - link "Sign up" [ref=e25] [cursor=pointer]:
+          - /url: /signup
