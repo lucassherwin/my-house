@@ -44,10 +44,13 @@ ssr-generated
 
 /config/master.key
 
+.github
+
 # claude and agent files
-/.agents
-/.claude
-/.mcp.json
-/.skills-lock.json
+.agents
+.claude
+.mcp.json
+.playwright-mcp
+skills-lock.json
 
 /test-results
