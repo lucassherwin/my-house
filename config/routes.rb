@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   get  "/signup", to: "registrations#new",   as: :signup
   post "/signup", to: "registrations#create"
 
+  resources :households, only: [:new, :create, :show], path: "my-household"
+
   root to: "home#index"
 end

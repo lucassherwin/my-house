@@ -4,6 +4,10 @@ class HomeController < ApplicationController
   before_action :require_authentication
 
   def index
-    @props = { name: current_person.first_name }
+    h = current_person.household
+    @props = {
+      name: current_person.first_name,
+      household: h ? { id: h.id, name: h.name } : nil
+    }
   end
 end
