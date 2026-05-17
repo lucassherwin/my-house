@@ -1,4 +1,4 @@
-.PHONY: up down build setup install console migrate logs bash test create-migration npm restart
+.PHONY: up down build setup install console migrate logs bash test create-migration npm restart npx
 
 COMPOSE = docker compose
 
@@ -51,3 +51,7 @@ test:
 ## Run npm install inside the web container (requires running container)
 npm:
 	$(COMPOSE) exec web npm install
+
+## Run an arbitrary npx command inside the web container (requires running container)
+npx:
+	$(COMPOSE) exec web npx $(filter-out $@,$(MAKECMDGOALS))

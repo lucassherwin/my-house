@@ -1,1 +1,2 @@
-<%= react_component("Navbar", props: {}, prerender: true) %>
+<% my_household_path = current_person.household ? household_path(current_person.household) : new_household_path %>
+<%= react_component("Navbar", props: { householdPath: my_household_path }, prerender: true) %>
